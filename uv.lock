@@ -292,59 +292,6 @@ wheels = [
 ]
 
 [[package]]
-name = "cookiecutter-pywf-open-source-demo"
-version = "1.0.4"
-source = { editable = "." }
-
-[package.optional-dependencies]
-dev = [
-    { name = "rich" },
-]
-doc = [
-    { name = "docfly" },
-    { name = "furo" },
-    { name = "ipython" },
-    { name = "nbsphinx" },
-    { name = "pygments" },
-    { name = "rstobj" },
-    { name = "sphinx" },
-    { name = "sphinx-copybutton" },
-    { name = "sphinx-design", version = "0.6.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
-    { name = "sphinx-design", version = "0.7.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
-    { name = "sphinx-jinja" },
-]
-mise = [
-    { name = "httpx" },
-    { name = "pygithub" },
-    { name = "tomli", marker = "python_full_version < '3.11'" },
-]
-test = [
-    { name = "pytest" },
-    { name = "pytest-cov" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "docfly", marker = "extra == 'doc'", specifier = "==3.0.3" },
-    { name = "furo", marker = "extra == 'doc'", specifier = "==2024.8.6" },
-    { name = "httpx", marker = "extra == 'mise'", specifier = ">=0.28.0,<1.0.0" },
-    { name = "ipython", marker = "extra == 'doc'", specifier = ">=8.18.1,<8.19.0" },
-    { name = "nbsphinx", marker = "extra == 'doc'", specifier = ">=0.8.12,<1.0.0" },
-    { name = "pygithub", marker = "extra == 'mise'", specifier = ">=2.8.0,<3.0.0" },
-    { name = "pygments", marker = "extra == 'doc'", specifier = ">=2.18.0,<3.0.0" },
-    { name = "pytest", marker = "extra == 'test'", specifier = ">=8.2.2,<9.0.0" },
-    { name = "pytest-cov", marker = "extra == 'test'", specifier = ">=6.0.0,<7.0.0" },
-    { name = "rich", marker = "extra == 'dev'", specifier = ">=13.8.1,<14.0.0" },
-    { name = "rstobj", marker = "extra == 'doc'", specifier = "==2.0.0" },
-    { name = "sphinx", marker = "extra == 'doc'", specifier = ">=7.4.7,<8.0.0" },
-    { name = "sphinx-copybutton", marker = "extra == 'doc'", specifier = ">=0.5.2,<1.0.0" },
-    { name = "sphinx-design", marker = "extra == 'doc'", specifier = ">=0.6.1,<1.0.0" },
-    { name = "sphinx-jinja", marker = "extra == 'doc'", specifier = ">=2.0.2,<3.0.0" },
-    { name = "tomli", marker = "python_full_version < '3.11' and extra == 'mise'", specifier = ">=2.0.0,<3.0.0" },
-]
-provides-extras = ["dev", "test", "doc", "mise"]
-
-[[package]]
 name = "coverage"
 version = "7.13.5"
 source = { registry = "https://pypi.org/simple" }
@@ -781,6 +728,59 @@ sdist = { url = "https://files.pythonhosted.org/packages/90/51/9187be60d989df97f
 wheels = [
     { url = "https://files.pythonhosted.org/packages/b1/dd/ead9d8ea85bf202d90cc513b533f9c363121c7792674f78e0d8a854b63b4/jupyterlab_pygments-0.3.0-py3-none-any.whl", hash = "sha256:841a89020971da1d8693f1a99997aefc5dc424bb1b251fd6322462a1b8842780", size = 15884, upload-time = "2023-11-23T09:26:34.325Z" },
 ]
+
+[[package]]
+name = "learn-snowflake"
+version = "0.1.1"
+source = { editable = "." }
+
+[package.optional-dependencies]
+dev = [
+    { name = "rich" },
+]
+doc = [
+    { name = "docfly" },
+    { name = "furo" },
+    { name = "ipython" },
+    { name = "nbsphinx" },
+    { name = "pygments" },
+    { name = "rstobj" },
+    { name = "sphinx" },
+    { name = "sphinx-copybutton" },
+    { name = "sphinx-design", version = "0.6.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
+    { name = "sphinx-design", version = "0.7.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
+    { name = "sphinx-jinja" },
+]
+mise = [
+    { name = "httpx" },
+    { name = "pygithub" },
+    { name = "tomli", marker = "python_full_version < '3.11'" },
+]
+test = [
+    { name = "pytest" },
+    { name = "pytest-cov" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "docfly", marker = "extra == 'doc'", specifier = "==3.0.3" },
+    { name = "furo", marker = "extra == 'doc'", specifier = "==2024.8.6" },
+    { name = "httpx", marker = "extra == 'mise'", specifier = ">=0.28.0,<1.0.0" },
+    { name = "ipython", marker = "extra == 'doc'", specifier = ">=8.18.1,<8.19.0" },
+    { name = "nbsphinx", marker = "extra == 'doc'", specifier = ">=0.8.12,<1.0.0" },
+    { name = "pygithub", marker = "extra == 'mise'", specifier = ">=2.8.0,<3.0.0" },
+    { name = "pygments", marker = "extra == 'doc'", specifier = ">=2.18.0,<3.0.0" },
+    { name = "pytest", marker = "extra == 'test'", specifier = ">=8.2.2,<9.0.0" },
+    { name = "pytest-cov", marker = "extra == 'test'", specifier = ">=6.0.0,<7.0.0" },
+    { name = "rich", marker = "extra == 'dev'", specifier = ">=13.8.1,<14.0.0" },
+    { name = "rstobj", marker = "extra == 'doc'", specifier = "==2.0.0" },
+    { name = "sphinx", marker = "extra == 'doc'", specifier = ">=7.4.7,<8.0.0" },
+    { name = "sphinx-copybutton", marker = "extra == 'doc'", specifier = ">=0.5.2,<1.0.0" },
+    { name = "sphinx-design", marker = "extra == 'doc'", specifier = ">=0.6.1,<1.0.0" },
+    { name = "sphinx-jinja", marker = "extra == 'doc'", specifier = ">=2.0.2,<3.0.0" },
+    { name = "tomli", marker = "python_full_version < '3.11' and extra == 'mise'", specifier = ">=2.0.0,<3.0.0" },
+]
+provides-extras = ["dev", "test", "doc", "mise"]
 
 [[package]]
 name = "markdown-it-py"

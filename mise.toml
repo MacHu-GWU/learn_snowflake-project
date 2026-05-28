@@ -5,6 +5,8 @@ CODECOV_TOKEN = "{{ exec(command='uvx --from home-secret-toml hst get codecov_io
 READTHEDOCS_TOKEN = "{{ exec(command='uvx --from home-secret-toml hst get readthedocs.accounts.sh.users.sh.secrets.dev.value') }}"
 PYPI_TOKEN = "{{ exec(command='uvx --from home-secret-toml hst get pypi.accounts.sh.token') }}"
 
+_.file = '.env'
+
 [tools]
 python = "3.12"
 uv = "latest"

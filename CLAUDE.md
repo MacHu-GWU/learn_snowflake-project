@@ -6,7 +6,27 @@ This document guides AI assistants on how to navigate and work with this project
 
 **What this project does:** Read `README.rst` for project description and purpose.
 
-**Project type:** Python package
+**Project type:** Python package — a personal learning project for exploring Snowflake. Documentation, examples, and code in this repo are written to help an individual developer learn Snowflake hands-on (SQL, Cortex, Snowpark, CLI, pricing, etc.).
+
+## Snowflake CLI
+
+This project uses the official `snowflake-cli` (the `snow` command) for any Snowflake operation that can be done from the command line — account setup, running SQL, managing warehouses/databases/objects, deploying Streamlit apps, working with Snowpark, etc.
+
+**Project standard — always invoke it via `uvx`, never install it globally:**
+
+```bash
+uvx --from snowflake-cli snow <subcommand> [args...]
+```
+
+Examples:
+
+```bash
+uvx --from snowflake-cli snow --version
+uvx --from snowflake-cli snow connection list
+uvx --from snowflake-cli snow sql -q "SELECT CURRENT_VERSION();"
+```
+
+Rationale: `uvx` runs the CLI in an ephemeral, isolated environment managed by `uv`, so we don't pollute the project's `.venv` or the system Python, and we always get a pinned, reproducible toolchain. When writing docs, examples, or automation in this repo, **always show the `uvx --from snowflake-cli snow ...` form** rather than a bare `snow ...` invocation.
 
 ## Core Configuration Files
 
