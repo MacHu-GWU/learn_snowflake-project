@@ -5,7 +5,7 @@ from functools import cached_property
 
 from pydantic import BaseModel, Field
 
-from ..constants import ObjectTypeEnum, DbTypeEnum
+from constants import ObjectTypeEnum, DbTypeEnum
 
 
 class BaseInfo(BaseModel):

@@ -50,10 +50,14 @@ class Book(Base):
 
 
 def build_engine():
+    # Pin warehouse at the URL level — otherwise every connection from the
+    # pool falls back to DEFAULT_WAREHOUSE (COMPUTE_WH on trial) instead of
+    # our X-Small auto-suspend LEARN_WH.
     url = URL(
         account=os.environ["SNOWFLAKE_ACCOUNT"],
         user=os.environ["SNOWFLAKE_USER"],
         password=os.environ["SNOWFLAKE_PASSWORD"],
+        warehouse=WAREHOUSE,
         role=os.environ.get("SNOWFLAKE_ROLE", "ACCOUNTADMIN"),
     )
     return create_engine(url)

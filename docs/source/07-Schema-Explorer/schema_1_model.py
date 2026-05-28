@@ -2,12 +2,11 @@
 
 import typing as T
 
+import sqlalchemy as sa
 from pydantic import Field
-from ...lazy_import import sa
 
-from ...constants import LLMTypeEnum
-
-from ..metadata import (
+from constants import LLMTypeEnum
+from metadata import (
     ObjectTypeEnum,
     BaseInfo,
     BaseColumnInfo,
@@ -15,8 +14,6 @@ from ..metadata import (
     BaseSchemaInfo,
     BaseDatabaseInfo,
 )
-
-_ = sa.ForeignKey
 
 
 class ForeignKeyInfo(BaseInfo):
@@ -29,9 +26,6 @@ class ForeignKeyInfo(BaseInfo):
     ondelete: T.Optional[str] = Field(default=None)
     deferrable: T.Optional[bool] = Field(default=None)
     initially: T.Optional[str] = Field(default=None)
-
-
-_ = sa.Column
 
 
 class ColumnInfo(BaseColumnInfo):
@@ -53,9 +47,6 @@ class ColumnInfo(BaseColumnInfo):
     foreign_keys: list[ForeignKeyInfo] = Field(default_factory=list)
     computed: bool = Field(default=False)
     identity: bool = Field(default=False)
-
-
-_ = sa.Table
 
 
 class TableInfo(BaseTableInfo):

@@ -1,13 +1,14 @@
 # -*- coding: utf-8 -*-
 
+import fnmatch
 import typing as T
 
-from ...lazy_import import sa, TypeEngine, Library
+import sqlalchemy as sa
+from sqlalchemy.types import TypeEngine
 
-from ...constants import ObjectTypeEnum, DbTypeEnum, LLMTypeEnum
-from ...utils import match
+from constants import ObjectTypeEnum, DbTypeEnum, LLMTypeEnum
 
-from .schema_1_model import (
+from schema_1_model import (
     ForeignKeyInfo,
     ColumnInfo,
     TableInfo,
@@ -15,10 +16,14 @@ from .schema_1_model import (
     DatabaseInfo,
 )
 
-try:
-    from rich import print as rprint
-except ImportError:  # pragma: no cover
-    pass
+
+def match(name: str, include: list[str], exclude: list[str]) -> bool:
+    """Return True if ``name`` passes the include / exclude glob filters."""
+    if include and not any(fnmatch.fnmatch(name, pat) for pat in include):
+        return False
+    if exclude and any(fnmatch.fnmatch(name, pat) for pat in exclude):
+        return False
+    return True
 
 
 def get_sqlalchemy_type_mapping() -> dict[str, LLMTypeEnum]:
@@ -29,10 +34,7 @@ def get_sqlalchemy_type_mapping() -> dict[str, LLMTypeEnum]:
     to simplified LLM type constants. It is used to convert SQLAlchemy types
     to a format suitable for LLM consumption.
     """
-    if isinstance(sa, Library):  # pragma: no cover
-        return {}
-    else:
-        return {
+    return {
             # String type
             sa.String.__visit_name__: LLMTypeEnum.STR,
             sa.Text.__visit_name__: LLMTypeEnum.STR,

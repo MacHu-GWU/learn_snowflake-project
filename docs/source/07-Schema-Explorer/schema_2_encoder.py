@@ -8,9 +8,9 @@ types (e.g., String, Integer) and SQL standard types (e.g., VARCHAR, BIGINT).
 
 import textwrap
 
-from ...constants import TAB, ObjectTypeEnum, TableTypeEnum, LLMColumnConstraintEnum
+from constants import TAB, ObjectTypeEnum, TableTypeEnum, LLMColumnConstraintEnum
 
-from .schema_1_model import (
+from schema_1_model import (
     ColumnInfo,
     TableInfo,
     SchemaInfo,

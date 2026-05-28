@@ -27,10 +27,14 @@ TABLE = "BOOKS"
 
 
 def get_connection() -> snowflake.connector.SnowflakeConnection:
+    # Pin warehouse at connect time. Without this, the session falls back to
+    # the user's DEFAULT_WAREHOUSE (trial default is COMPUTE_WH), so the
+    # XSMALL + auto-suspend LEARN_WH we create below silently goes unused.
     return snowflake.connector.connect(
         account=os.environ["SNOWFLAKE_ACCOUNT"],
         user=os.environ["SNOWFLAKE_USER"],
         password=os.environ["SNOWFLAKE_PASSWORD"],
+        warehouse=WAREHOUSE,
         role=os.environ.get("SNOWFLAKE_ROLE", "ACCOUNTADMIN"),
     )
 
