@@ -41,6 +41,8 @@
             "Bash(mise *)",
             "Bash(uv *)",
             "Bash(ruff *)",
+            "Read(========== Snowflake CLI — broad, lets AI run ANY SQL; tighten later ==========)",
+            "Bash(uvx --from snowflake-cli snow *)",
             "Read(========== Skill Section ==========)",
             "Read(========== Web Search ==========)",
             "WebSearch",
