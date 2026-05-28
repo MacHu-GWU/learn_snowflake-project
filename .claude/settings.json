@@ -3,6 +3,16 @@
     "permissions": {
         "defaultMode": "acceptEdits",
         "deny": [
+            "Read(========== Secrets — .env ==========)",
+            "Read(.env)",
+            "Read(./.env)",
+            "Bash(cat .env)",
+            "Bash(cat ./.env)",
+            "Bash(head .env)",
+            "Bash(head ./.env)",
+            "Bash(tail .env)",
+            "Bash(tail ./.env)",
+            "Read(========== Git ==========)",
             "Bash(git commit*)",
             "Bash(git push*)"
         ],
